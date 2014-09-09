@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @purchase.product_id %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @purchase.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @purchase.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @purchase.email %>
+</p>
+
+<p>
+  <b>Contact no:</b>
+  <%= @purchase.contact_no %>
+</p>
+
+<p>
+  <b>Address1:</b>
+  <%= @purchase.address1 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @purchase.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @purchase.state %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @purchase.country %>
+</p>
+
+<p>
+  <b>Zipcode:</b>
+  <%= @purchase.zipcode %>
+</p>
+
+<p>
+  <b>Card type:</b>
+  <%= @purchase.card_type %>
+</p>
+
+<p>
+  <b>Card expires on:</b>
+  <%= @purchase.card_expires_on %>
+</p>
+
+<p>
+  <b>Ip address:</b>
+  <%= @purchase.ip_address %>
+</p>
+
+<p>
+  <b>Purchased at:</b>
+  <%= @purchase.purchased_at %>
+</p>
+
+<p>
+  <b>Total cost:</b>
+  <%= @purchase.total_cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_purchase_path(@purchase) %> |
+<%= link_to 'Back', purchases_path %>

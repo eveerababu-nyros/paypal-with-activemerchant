@@ -1,0 +1,141 @@
+<script>
+  $(function() { 
+    $(".payment_order").submit(function(){
+          $(".payment_order :submit").attr("disabled", true);
+          $("#form_load").show();
+     });
+  });
+</script>
+<center>
+<%= form_for @purchase, :html => {:class => 'payment_order'} do |f| %>
+  <% if @purchase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+
+      <ul>
+      <% @purchase.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div style="display:none;" id="form_load">
+    <img src="/assets/loading.gif"/>
+  </div>
+
+  <%#= params[:id].inspect %>
+  <div class="field">
+        <%#= f.label :product_id %><br />
+        <%= f.hidden_field :product_id, value: params[:id].to_i %>
+        <%= f.hidden_field :total_cost, value: Product.find(params[:id]).cost %>
+      </div>
+<table>
+  <tr>
+    <td>
+      <div class="field">
+        <%= f.label :first_name %><br />
+        <%= f.text_field :first_name, :required => true %>
+      </div>
+    </td>
+    <td>
+      <div class="field">
+        <%= f.label :last_name %><br />
+        <%= f.text_field :last_name, :required => true %>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.text_field :email, :required => true %>
+      </div>
+    </td>
+    <td>
+      <div class="field">
+        <%= f.label :contact_no %><br />
+        <%= f.text_field :contact_no %>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">
+        <%= f.label :address1 %><br />
+        <%= f.text_field :address1, :as => :text ,:input_html => {:rows => 3}, :required => true %>
+      </div>
+    </td>
+    <td>
+      <div class="field">
+        <%= f.label :city %><br />
+        <%= f.text_field :city, :required => true %>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">
+        <%= f.label :state %><br />
+        <%= f.text_field :state, :required => true %>
+      </div>
+    </td>
+    <td>
+      <div class="field">
+        <%= f.label :country %><br />
+        <%= f.text_field :country, :required=> true %>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">
+        <%= f.label :zipcode %><br />
+        <%= f.text_field :zipcode, :required => true,:input_html=>{:class => "digits"}  %>
+      </div>
+    </td>
+    <td>
+      <div class="field">
+        <%= f.label :card_type %><br />
+        <%= f.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]],:required => true,:prompt => "Choose any card" %>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">
+        <%= f.label :card_expires_on %><br />
+        <%= f.date_select :card_expires_on, :discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true %>
+      </div>
+    </td>
+    <td>
+      <div class="field">
+        <%= f.label :card_number %><br />
+        <%= f.text_field :card_number,:required => true,:input_html=>{:class => "digits"} %>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">
+        <%= f.label :card_verification, "Card Verification Value(CVV)" %><br />
+        <%= f.text_field :card_verification,:required => true,:input_html=>{:class => "digits"} %>
+      </div>
+    </td>
+    <td>
+       <div class="field">
+       
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+     <div class="actions">
+        <%= f.submit %>
+      </div>
+    </td>
+  </tr>
+  
+ </table>
+<% end %>
+</center>

@@ -1,0 +1,13 @@
+<div style="margin-left:200px;background:#FFB6B6">
+
+Hello <h4> <%= @purchase.first_name.capitalize %> <%= @purchase.last_name.capitalize %> </h4>
+
+Your transaction has been successfully completed
+
+<h2> Transaction receipt </h2>
+Transaction Id : <%= @purchase.transaction.params["transaction_id"] %> <br>
+<%= @purchase.transaction.created_at %> <br> <br>
+
+
+<h5> Thanks for purchasing </h5>
+</div>

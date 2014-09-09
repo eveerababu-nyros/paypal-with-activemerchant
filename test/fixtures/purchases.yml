@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  product_id: 1
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  contact_no: MyString
+  address1: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  zipcode: MyString
+  card_type: MyString
+  card_expires_on: 2014-09-09
+  ip_address: MyString
+  purchased_at: 2014-09-09 08:57:27
+  total_cost: 1.5
+
+two:
+  product_id: 1
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  contact_no: MyString
+  address1: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  zipcode: MyString
+  card_type: MyString
+  card_expires_on: 2014-09-09
+  ip_address: MyString
+  purchased_at: 2014-09-09 08:57:27
+  total_cost: 1.5

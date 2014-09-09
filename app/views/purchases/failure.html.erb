@@ -1,0 +1,10 @@
+<div>
+Hello <h4> <%= @purchase.first_name.capitalize %> <%= @purchase.last_name.capitalize %> </h4>
+
+Your transaction has failed due to some reasons
+
+<h2> Transaction receipt </h2>
+Transaction Id : <%= @purchase.transaction.params["transaction_id"] %> <br>
+<%= @purchase.transaction.created_at %> <br> <br>
+
+</div>
